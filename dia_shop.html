@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Diamond Store - Myanmar</title>
+    <style>
+        /* CSS ပိုင်း - Design ပြုပြင်ခြင်း */
+        :root {
+            --primary-color: #00d2ff;
+            --secondary-color: #9d50bb;
+            --dark-bg: #0b0e14;
+            --card-bg: #1a202c;
+            --text-white: #ffffff;
+            --accent-yellow: #f1c40f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(90deg, #1a202c, #2d3748);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .header-banner {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 40px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://w0.peakpx.com/wallpaper/559/547/HD-wallpaper-mobile-legends-bang-bang-game-mobile-legends-games-2018-games.jpg');
+            background-size: cover;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        /* Card Sections */
+        .section-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #2d3748;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-yellow);
+        }
+
+        .section-title span {
+            background: var(--accent-yellow);
+            color: black;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Input Fields */
+        .id-inputs {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #4a5568;
+            background: #2d3748;
+            color: white;
+            font-size: 1rem;
+        }
+
+        input:focus {
+            outline: 2px solid var(--primary-color);
+        }
+
+        /* Diamond Grid */
+        .diamond-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 15px;
+        }
+
+        .pack-item {
+            background: #2d3748;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .pack-item:hover {
+            transform: translateY(-5px);
+            background: #3a4556;
+        }
+
+        .pack-item.selected {
+            border-color: var(--primary-color);
+            background: rgba(0, 210, 255, 0.1);
+        }
+
+        .pack-item img {
+            width: 40px;
+            margin-bottom: 10px;
+        }
+        .pack-item .dm-count {
+            display: block;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .pack-item .price {
+            color: var(--accent-yellow);
+            font-size: 0.9rem;
+        }
+
+        /* Payment Methods */
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+        }
+
+        .pay-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #2d3748;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .pay-item img {
+            width: 35px;
+            height: 35px;
+            border-radius: 5px;
+        }
+
+        .pay-item input {
+            width: auto;
+        }
+
+        .pay-item.selected {
+            border-color: #48bb78;
+        }
+
+        /* Buy Button */
+        .buy-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #718096;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MOBILE LEGENDS SHOP</div>
+    </nav>
+
+    <div class="container">
+        
+        <div class="header-banner">
+            <h1>Diamonds Top-up</h1>
+            <p>မြန်မာနိုင်ငံ၏ စိတ်အချရဆုံး ဂိမ်းဝန်ဆောင်မှု</p>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title"><span>၁</span> အကောင့်အချက်အလက် ထည့်ပါ</div>
+            <div class="id-inputs">
+                <input type="number" id="user_id" placeholder="User ID ရိုက်ထည့်ပါ">
+                <input type="number" id="zone_id" placeholder="(Zone ID)">
+            </div>
+            <p style="font-size: 0.75rem; color: #a0aec0; margin-top: 10px;">ID စစ်ဆေးရန် Profile ကို နှိပ်ပါ။ ဥပမာ - 12345678 (1234)</p>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title"><span>၂</span> Diamond ပမာဏ ရွေးချယ်ပါ</div>
+            <div class="diamond-grid" id="diamondGrid">
+                <div class="pack-item" onclick="selectDiamond(this, 86, 2500)">
+                    <img src="j.png"  alt="dm">
+                    <span class="dm-count">86 Dm</span>
+                    <span class="price">2,500 Ks</span>
+                </div>
+                <div class="pack-item" onclick="selectDiamond(this, 172, 5000)">
+                    <img src="j.png"  alt="dm">
+                    <span class="dm-count">172 Dm</span>
+                    <span class="price">5,000 Ks</span>
+                </div>
+                <div class="pack-item" onclick="selectDiamond(this, 257, 7400)">
+                   <img src="j.png"  alt="dm">
+                    <span class="dm-count">257 Dm</span>
+                    <span class="price">7,400 Ks</span>
+                </div>
+                <div class="pack-item" onclick="selectDiamond(this, 706, 19500)">
+                    <img src="j.png"  alt="dm">
+                    <span class="dm-count">706 Dm</span>
+                    <span class="price">19,500 Ks</span>
+                    </div>
+                <div class="pack-item" onclick="selectDiamond(this, 1050, 28000)">
+                    <img src="j.png"  alt="dm">
+                    <span class="dm-count">1050 Dm</span>
+                    <span class="price">28,000 Ks</span>
+                </div>
+                <div class="pack-item" onclick="selectDiamond(this, 2195, 55000)">
+                   <img src="j.png"  alt="dm">
+                    <span class="dm-count">2195 Dm</span>
+                    <span class="price">55,000 Ks</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title"><span>၃</span> ငွေပေးချေမှုစနစ် ရွေးချယ်ပါ</div>
+            <div class="payment-grid">
+                <div class="pay-item" onclick="selectPayment(this, 'KBZPay')">
+                    <img src="https://www.kbzpay.com/favicon.ico" alt="kpay">
+                    <span>KBZPay</span>
+                </div>
+                <div class="pay-item" onclick="selectPayment(this, 'WavePay')">
+                    <img src="https://www.wavemoney.com.mm/favicon.ico" alt="wave">
+                    <span>WavePay</span>
+                </div>
+                <div class="pay-item" onclick="selectPayment(this, 'CBPay')">
+                    <img src="https://www.cbbank.com.mm/favicon.ico" alt="cb">
+                    <span>CBPay</span>
+                </div>
+                <div class="pay-item" onclick="selectPayment(this, 'AYAPay')">
+                    <img src="https://www.ayapay.com/favicon.ico" alt="aya">
+                    <span>AYAPyay</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="buy-btn" onclick="processOrder()">အခုပဲ ဝယ်ယူမည်</button>
+
+    </div>
+
+    <footer>
+        &copy; 2024 MLBB Diamond Shop Myanmar. All rights reserved.
+    </footer>
+
+    <script>
+        let selected_dm = null;
+        let selected_price = null;
+        let selected_payment = null;
+
+        function selectDiamond(element, amount, price) {
+            // Reset previous selection
+            document.querySelectorAll('.pack-item').forEach(el => el.classList.remove('selected'));
+            // Select new
+            element.classList.add('selected');
+            selected_dm = amount;
+            selected_price = price;
+        }
+
+        function selectPayment(element, method) {
+            // Reset previous selection
+            document.querySelectorAll('.pay-item').forEach(el => el.classList.remove('selected'));
+            // Select new
+            element.classList.add('selected');
+            selected_payment = method;
+        }
+
+        function processOrder() {
+            const userId = document.getElementById('user_id').value;
+            const zoneId = document.getElementById('zone_id').value;
+
+            // အချက်အလက် စစ်ဆေးခြင်း
+            if (!userId || !zoneId) {
+                alert("ကျေးဇူးပြု၍ User ID နှင့် Zone ID မှန်ကန်စွာ ဖြည့်ပေးပါ!");
+                return;
+            }
+
+            if (!selected_dm) {
+                alert("ကျေးဇူးပြု၍ Diamond ပမာဏ ရွေးချယ်ပါ!");
+                return;
+            }
+
+            if (!selected_payment) {
+                alert("ကျေးဇူးပြု၍ ငွေပေးချေမှုစနစ် ရွေးချယ်ပါ!");
+                return;
+            }
+
+            // အတည်ပြုစာသား (Error မတက်စေရန် စာသားများကို ပေါင်းရေးထားခြင်း)
+            var message = "အော်ဒါအချက်အလက်များကို အတည်ပြုပေးပါ\n";
+            message += "----------------------------\n";
+            message += "ID: " + userId + " (" + zoneId + ")\n";
+            message += "Diamond: " + selected_dm + " Diamonds\n";
+            message += "Price: " + selected_price + " Ks\n";
+            message += "Payment: " + selected_payment + "\n"
+            message += "Name: " + "Hein Htet Aung" + "\n"
+            message += "Phone: " + "09671710259" + "\n"
+            message += "----------------------------\n";
+            message += "ငွေပေးချေရန် ဆက်သွားမလား?";
+
+            if (confirm(message)) {
+                // ငွေလွှဲရမယ့် ဖုန်းနံပါတ် သို့မဟုတ် လုပ်ဆောင်ချက်ကို ဒီမှာထည့်ပါ
+                alert("Order လက်ခံရရှိပါသည်။ ကျေးဇူးပြု၍ သတ်မှတ်ထားသော " + selected_payment + " သို့ ငွေလွှဲပေးပါ။");
+            }
+        }
+    </script>
+</body>
+</html>
